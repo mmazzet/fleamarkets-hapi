@@ -1,0 +1,28 @@
+<Card title="Fleamarkets to date">
+  <table class="table is-fullwidth">
+    <thead>
+      <th>Flea Market Name</th>
+      <th>Category</th>
+      <th>Country</th>
+      <th>Donor</th>
+    </thead>
+    <tbody>
+      {{#each fleamarkets}}
+      <tr>
+        <td>
+          {{marketname}}
+        </td>
+        <td>
+          {{category}}
+        </td>
+        <td>
+          {{country.lastName}}, {{country.firstName}}
+        </td>
+        <td>
+          {{donor}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</Card>
