@@ -16,6 +16,10 @@ export const userStore = {
   },
 
   async add(user: any): Promise<User | null> {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(user.email)) {
+      throw new Error("Invalid email format");
+    }
     const newUser = new UserMongoose(user);
     const userObj = await newUser.save();
     return userObj;

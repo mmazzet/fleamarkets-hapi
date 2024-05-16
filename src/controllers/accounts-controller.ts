@@ -18,6 +18,7 @@ export const accountsController = {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
       const user = request.payload;
+
       await db.userStore.add(user);
       return h.redirect("/");
     },
@@ -32,10 +33,17 @@ export const accountsController = {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
       const { email, password } = request.payload as any;
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return h.view("login", { title: "Login to Flea Market", errorMessage: "Invalid email format" });
+      }
       const user = await db.userStore.findBy(email);
       if (!user || user.password !== password) {
-        return h.redirect("/");
+        return h.view("login", { title: "Login to Flea Market", errorMessage: "Invalid email or password" });
       }
+
+
       request.cookieAuth.set({ id: user._id });
       return h.redirect("/addmarket");
     },

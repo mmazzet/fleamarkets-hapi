@@ -4,7 +4,7 @@ import { User } from "../../types/fleamarket-types";
 const userSchema = new Schema<User>({
   firstName: String,
   lastName: String,
-  email: String,
+  email: { type: String, required: true },
   password: String,
 });
 

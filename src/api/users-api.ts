@@ -40,8 +40,14 @@ export const userApi = {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
       try {
-        console.log("HERE");
+
         const userPayload = request.payload as User;
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(userPayload.email)) {
+          return Boom.badRequest("Invalid email format");
+        }
+        
         console.log(userPayload);
         const user = (await db.userStore.add(userPayload)) as User;
         return h.response({ success: true }).code(201);
