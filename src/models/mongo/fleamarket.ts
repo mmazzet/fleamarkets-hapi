@@ -2,7 +2,7 @@ import { Schema, model } from "mongoose";
 import { Fleamarket } from "../../types/fleamarket-types";
 
 const fleamarketSchema = new Schema<Fleamarket>({
-  marketname: Number,
+  marketname: String,
   category: String,
   donor: {
     type: Schema.Types.ObjectId,

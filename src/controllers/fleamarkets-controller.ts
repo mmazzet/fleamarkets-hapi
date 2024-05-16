@@ -7,7 +7,7 @@ export const fleamarketsController = {
       const loggedInUser = request.auth.credentials;
       const countries = await db.countryStore.find();
       return h.view("addmarket", {
-        title: "Make a Fleamarket",
+        title: "Add a Flea Market",
         user: loggedInUser,
         countries: countries,
       });

@@ -5,13 +5,13 @@ export const accountsController = {
   index: {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
-      return h.view("main", { title: "Welcome to Fleamarket" });
+      return h.view("main", { title: "Welcome to Flea Market" });
     },
   },
   showSignup: {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
-      return h.view("signup", { title: "Sign up for Fleamarket" });
+      return h.view("signup", { title: "Sign up for Flea Market" });
     },
   },
   signup: {
@@ -25,7 +25,7 @@ export const accountsController = {
   showLogin: {
     auth: false,
     handler: async function (request: Request, h: ResponseToolkit) {
-      return h.view("login", { title: "Login to Fleamarket" });
+      return h.view("login", { title: "Login to Flea Market" });
     },
   },
   login: {
