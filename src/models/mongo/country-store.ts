@@ -12,10 +12,10 @@ export const countryStore = {
     return country;
   },
 
-  async findBy(lastName: string, firstName: string): Promise<Country | null> {
+  async findBy(countryname: string, _id: string): Promise<Country | null> {
     const country = await CountryMongoose.findOne({
-      lastName,
-      firstName,
+      countryname,
+      _id,
     }).lean();
     return country;
   },

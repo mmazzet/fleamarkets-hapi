@@ -22,17 +22,32 @@ export const seedData = {
   },
   countries: {
     _model: "Country",
-    lisa: {
-      firstName: "Lisa",
-      lastName: "Simpson",
+    country_1: {
+      countryname: "Ireland",
     },
-    maggie: {
-      firstName: "Maggie",
-      lastName: "Simpson",
+    country_2: {
+      countryname: "Italy",
     },
-    ned: {
-      firstName: "Ned",
-      lastName: "Flanders",
+    country_3: {
+      countryname: "France",
+    },
+    country_4: {
+      countryname: "Germany",
+    },
+    country_5: {
+      countryname: "Portugal",
+    },
+    country_6: {
+      countryname: "Greece",
+    },
+    country_7: {
+      countryname: "Spain",
+    },
+    country_8: {
+      countryname: "Netherlands",
+    },
+    country_9: {
+      countryname: "Belgium",
     },
   },
   fleamarkets: {
@@ -41,7 +56,7 @@ export const seedData = {
       marketname: "El Rastro",
       category: "Other",
       donor: "->users.bart",
-      country: "->countries.lisa",
+      countryname: "Spain",
       lat: "52.161290",
       lng: "-7.51540",
     },
@@ -49,7 +64,7 @@ export const seedData = {
       marketname: "Fiera di Sinigaglia",
       category: "Vintage Clothes",
       donor: "->users.marge",
-      country: "->countries.lisa",
+      countryname: "Italy",
       lat: "52.261290",
       lng: "-7.231540",
     },
@@ -57,7 +72,7 @@ export const seedData = {
       marketname: "Les Puces de Saint-Ouen",
       category: "Antiques",
       donor: "->users.homer",
-      country: "->countries.ned",
+      countryname: "France",
       lat: "52.361290",
       lng: "-7.241540",
     },

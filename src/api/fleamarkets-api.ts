@@ -42,7 +42,7 @@ export const fleamarketsApi = {
         marketname: fleamarketPayload.marketname,
         category: fleamarketPayload.category,
         donor: request.auth.credentials._id,
-        country: country,
+        country: fleamarketPayload.country,
         lat: fleamarketPayload.lat,
         lng: fleamarketPayload.lng,
       };

@@ -8,10 +8,7 @@ const fleamarketSchema = new Schema<Fleamarket>({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  country: {
-    type: Schema.Types.ObjectId,
-    ref: "Country",
-  },
+  country: String,
   lat: String,
   lng: String,
 });
