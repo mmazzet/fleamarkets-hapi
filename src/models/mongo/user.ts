@@ -5,7 +5,7 @@ const userSchema = new Schema<User>({
   firstName: String,
   lastName: String,
   email: { type: String, required: true },
-  password: String,
+  password: { type: String, required: true, minlength: 6 },
 });
 
 export const UserMongoose = model("User", userSchema);

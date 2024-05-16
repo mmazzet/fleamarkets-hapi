@@ -42,6 +42,9 @@ export const accountsController = {
       if (!user || user.password !== password) {
         return h.view("login", { title: "Login to Flea Market", errorMessage: "Invalid email or password" });
       }
+      if (password.length < 6) {
+        return h.view("login", { title: "Login to Flea Market", errorMessage: "Password must be at least 6 characters long" });
+      }
 
 
       request.cookieAuth.set({ id: user._id });

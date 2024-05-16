@@ -20,6 +20,9 @@ export const userStore = {
     if (!emailRegex.test(user.email)) {
       throw new Error("Invalid email format");
     }
+    if (user.password.length < 6) { 
+      throw new Error("Password must be at least 6 characters long");
+    }
     const newUser = new UserMongoose(user);
     const userObj = await newUser.save();
     return userObj;

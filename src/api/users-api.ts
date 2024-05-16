@@ -47,7 +47,10 @@ export const userApi = {
         if (!emailRegex.test(userPayload.email)) {
           return Boom.badRequest("Invalid email format");
         }
-        
+        if (userPayload.password.length < 6) {
+          return Boom.badRequest("Password must be at least 6 characters long");
+        }
+
         console.log(userPayload);
         const user = (await db.userStore.add(userPayload)) as User;
         return h.response({ success: true }).code(201);
