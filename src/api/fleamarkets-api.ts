@@ -33,11 +33,20 @@ export const fleamarketsApi = {
       strategy: "jwt",
     },
     handler: async function (request: Request, h: ResponseToolkit) {
-      const country = (await db.countryStore.findOne(request.params.id)) as Country;
+      const countryId = request.params.id;
+      console.log("Country ID:", countryId);
+
+      //const country = (await db.countryStore.findOne(request.params.id)) as Country;
+
+      const country = await db.countryStore.findOne(countryId);
+      console.log("Country:", country);
+
       if (country === null) {
         return Boom.notFound("No Country with this id");
       }
       const fleamarketPayload = request.payload as Fleamarket;
+      console.log("Fleamarket Payload:", fleamarketPayload);
+
       const fleamarket = {
         marketname: fleamarketPayload.marketname,
         category: fleamarketPayload.category,
@@ -46,7 +55,12 @@ export const fleamarketsApi = {
         lat: fleamarketPayload.lat,
         lng: fleamarketPayload.lng,
       };
+
+      console.log("New Fleamarket:", fleamarket);
+
       const newFleamarket = (await db.fleamarketStore.add(fleamarket)) as Fleamarket;
+
+      console.log("Newly added Fleamarket:", newFleamarket);
       return h.response(newFleamarket).code(200);
     },
   },
