@@ -3,7 +3,7 @@ import { FleamarketMongoose } from "./fleamarket.js";
 
 export const fleamarketStore = {
   async find(): Promise<Fleamarket[]> {
-    const fleamarkets = await FleamarketMongoose.find().populate("donor").populate("country").lean();
+    const fleamarkets = await FleamarketMongoose.find().populate("country").lean();
     return fleamarkets;
   },
 

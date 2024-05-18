@@ -36,9 +36,7 @@ export const fleamarketsApi = {
       const countryId = request.params.id;
       console.log("Country ID:", countryId);
 
-      //const country = (await db.countryStore.findOne(request.params.id)) as Country;
-
-      const country = await db.countryStore.findOne(countryId);
+      const country = (await db.countryStore.findOne(request.params.id)) as Country;
       console.log("Country:", country);
 
       if (country === null) {
@@ -50,7 +48,6 @@ export const fleamarketsApi = {
       const fleamarket = {
         marketname: fleamarketPayload.marketname,
         category: fleamarketPayload.category,
-        donor: request.auth.credentials._id,
         country: fleamarketPayload.country,
         lat: fleamarketPayload.lat,
         lng: fleamarketPayload.lng,

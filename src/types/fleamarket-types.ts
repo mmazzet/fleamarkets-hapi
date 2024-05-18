@@ -15,7 +15,6 @@ export interface Fleamarket {
   marketname: string;
   category: string;
   country: Country | string;
-  donor: User | string;
   lat: number;
   lng: number;
 }

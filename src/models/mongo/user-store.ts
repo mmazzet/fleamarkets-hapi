@@ -25,6 +25,7 @@ export const userStore = {
     }
     const newUser = new UserMongoose(user);
     const userObj = await newUser.save();
+    console.log("Newly created user:", userObj);
     return userObj;
   },
 

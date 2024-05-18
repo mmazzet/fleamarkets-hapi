@@ -21,7 +21,6 @@ export const fleamarketsController = {
         const fleamarket = {
           marketname: fleamarketPayload.marketname,
           category: fleamarketPayload.category,
-          donor: loggedInUser._id,
           country: fleamarketPayload.country,
           lat: fleamarketPayload.lat,
           lng: fleamarketPayload.lng,

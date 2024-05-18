@@ -55,7 +55,6 @@ export const seedData = {
     one: {
       marketname: "El Rastro",
       category: "Other",
-      donor: "->users.bart",
       country: "->countries.country_7.countryname",
       lat: "52.161290",
       lng: "-7.51540",
@@ -63,7 +62,6 @@ export const seedData = {
     two: {
       marketname: "Fiera di Sinigaglia",
       category: "Vintage Clothes",
-      donor: "->users.marge",
       country: "->countries.country_2.countryname",
       lat: "52.261290",
       lng: "-7.231540",
@@ -71,7 +69,6 @@ export const seedData = {
     three: {
       marketname: "Les Puces de Saint-Ouen",
       category: "Antiques",
-      donor: "->users.homer",
       country: "->countries.country_3.countryname",
       lat: "52.361290",
       lng: "-7.241540",
