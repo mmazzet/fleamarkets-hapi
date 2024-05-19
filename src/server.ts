@@ -47,8 +47,8 @@ async function initPlugins(server: Server) {
 function initSecurityStrategies(server: Server) {
   server.auth.strategy("session", "cookie", {
     cookie: {
-      name: process.env.cookie_name,
-      password: process.env.cookie_password,
+      name: process.env.COOKIE_NAME,
+      password: process.env.COOKIE_PASSWORD,
       isSecure: false,
     },
     redirectTo: "/",
@@ -66,7 +66,8 @@ function initSecurityStrategies(server: Server) {
 async function init() {
   importEnvs();
   const server = Hapi.server({
-    port: process.env.PORT || 4000,
+    port: process.env.PORT || 3000,
+    host: "0.0.0.0",
     routes: { cors: true },
   });
   await initPlugins(server);

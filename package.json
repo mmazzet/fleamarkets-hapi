@@ -46,6 +46,6 @@
     "svelte-cloudinary": "^1.3.2"
   },
   "engines": {
-    "node": "16"
+    "node": ">=18.0.0"
   }
 }
